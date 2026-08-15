@@ -1,114 +1,289 @@
-<div class="preview-card">
-  <p class="eyebrow">Here's a preview of your destination</p>
-
-  <a href="#" class="brand">ice</a>
-
-  <p class="message">
-    We couldn't retrieve information about this page, but we're reviewing the
-    link for your safety.
-  </p>
-
-  <div class="security-box">
-    <h3>Security check</h3>
-
-    <div class="check-row">🛡️ <span>Scanned by SmartPlay</span></div>
-    <div class="check-row">👁️ <span>Links monitored for suspicious behavior</span></div>
-    <div class="check-row green">✓ <span>No threats detected at this time</span></div>
-  </div>
-
-  <button class="continue-btn">Continue to destination →</button>
-
-  <p class="redirect">You'll be redirected in 2 seconds...</p>
-</div>
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gaming Demo</title>
 
 <style>
-  body {
-    margin: 0;
-    min-height: 100vh;
-    background: #f3f1d9;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: Arial, sans-serif;
-    color: #243142;
-  }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
 
-  .preview-card {
-    width: 500px;
-    background: white;
-    border-radius: 18px;
-    padding: 52px 50px 48px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
-  }
+body{
+    background:#140606;
+    color:#fff;
+}
 
-  .eyebrow {
-    font-size: 23px;
-    color: #4b5563;
-    margin: 0 0 20px;
-  }
+.container{
+    display:flex;
+    min-height:100vh;
+}
 
-  .brand {
-    display: inline-block;
-    font-size: 28px;
-    font-weight: 700;
-    color: #006bd6;
-    text-decoration: underline;
-    margin-bottom: 22px;
-  }
+.demo{
+    width:70%;
+    background:#111;
+}
 
-  .message {
-    font-size: 18px;
-    line-height: 1.45;
-    color: #4b5563;
-    margin: 0 0 30px;
-  }
+iframe{
+    width:100%;
+    height:100vh;
+    border:none;
+}
 
-  .security-box {
-    background: #f8f9fb;
-    border-radius: 14px;
-    padding: 26px 25px;
-    margin-bottom: 30px;
-  }
+.right{
+    width:30%;
+    padding:30px 22px;
+    background:linear-gradient(180deg,#2b0000,#0d0000);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
 
-  .security-box h3 {
-    margin: 0 0 22px;
-    font-size: 20px;
-    color: #111827;
-  }
+.box{
+    width:100%;
+    background:#0b0b0b;
+    border:1px solid #ff2d2d;
+    border-radius:22px;
+    padding:26px 20px;
+    text-align:center;
+    box-shadow:0 0 30px rgba(255,0,0,.35);
+}
 
-  .check-row {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    font-size: 17px;
-    color: #374151;
-    margin: 17px 0;
-  }
+.badge{
+    display:inline-block;
+    background:#ff2d2d;
+    color:#fff;
+    padding:10px 22px;
+    border-radius:30px;
+    font-weight:bold;
+    margin-bottom:18px;
+}
 
-  .green {
-    color: #16a34a;
-  }
+h1{
+    color:#ff4040;
+    font-size:36px;
+    text-transform:uppercase;
+    margin-bottom:15px;
+}
 
-  .green span {
-    color: #374151;
-  }
+.sub{
+    color:#ddd;
+    line-height:1.6;
+    margin-bottom:24px;
+    font-size:17px;
+}
 
-  .continue-btn {
-    width: 100%;
-    height: 59px;
-    border: none;
-    border-radius: 8px;
-    background: #06457e;
-    color: white;
-    font-size: 21px;
-    font-weight: 700;
-    cursor: pointer;
-  }
+.features{
+    display:grid;
+    gap:14px;
+    margin:24px 0;
+}
 
-  .redirect {
-    text-align: center;
-    font-size: 17px;
-    color: #4b5563;
-    margin: 23px 0 0;
-  }
+.feature{
+    background:linear-gradient(90deg,#1b1b1b,#3b0000);
+    border:1px solid rgba(255,50,50,.6);
+    border-radius:14px;
+    padding:15px;
+    font-size:18px;
+    font-weight:bold;
+}
+
+.feature span{
+    color:#ff4d4d;
+}
+
+.website-row{
+    display:flex;
+    justify-content:space-between;
+    margin-top:18px;
+    font-weight:bold;
+    gap:10px;
+    flex-wrap:wrap;
+}
+
+.website-row a{
+    text-decoration:none;
+}
+
+.website{
+    color:#25D366;
+}
+
+.whatsapp-small{
+    color:#ff4d4d;
+}
+
+.cta{
+    display:block;
+    margin-top:24px;
+    background:#25D366;
+    color:#fff;
+    text-decoration:none;
+    padding:18px;
+    border-radius:15px;
+    font-size:22px;
+    font-weight:bold;
+    transition:.3s;
+    box-shadow:0 0 18px rgba(37,211,102,.4);
+}
+
+.cta:hover{
+    background:#1ebe5d;
+    transform:scale(1.03);
+}
+
+.trust{
+    margin-top:18px;
+    color:#ccc;
+    line-height:1.7;
+}
+
+.footer{
+    margin-top:20px;
+    color:#888;
+    font-size:12px;
+}
+
+/* MOBILE */
+@media (max-width:768px){
+
+.container{
+    flex-direction:column-reverse;
+}
+
+.demo,
+.right{
+    width:100%;
+}
+
+iframe{
+    height:500px;
+}
+
+.right{
+    padding:20px;
+}
+
+h1{
+    font-size:28px;
+}
+
+.sub{
+    font-size:16px;
+}
+
+.feature{
+    font-size:16px;
+}
+
+.cta{
+    font-size:20px;
+    padding:16px;
+}
+
+.website-row{
+    flex-direction:column;
+    align-items:center;
+    gap:12px;
+}
+
+}
 </style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Demo Section -->
+    <div class="demo">
+        <iframe src="https://www.ice777.me/"></iframe>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="right">
+
+        <div class="box">
+
+            <div class="badge">
+                VIP Manual ID Available
+            </div>
+
+            <h1>GET YOUR ID NOW</h1>
+
+            <p class="sub">
+                Fast manual ID service with easy deposit support.
+                New users can start quickly through WhatsApp.
+            </p>
+
+            <div class="features">
+
+                <div class="feature">
+                    Minimum Deposit:
+                    <span>₹100 Only</span>
+                </div>
+
+                <div class="feature">
+                    Welcome Bonus:
+                    <span>10%</span>
+                </div>
+
+                <div class="feature">
+                    Manual ID Support:
+                    <span>WhatsApp Only</span>
+                </div>
+
+                <div class="feature">
+                    Quick Help:
+                    <span>Deposit &amp; Withdrawal Support</span>
+                </div>
+
+            </div>
+
+            <div class="website-row">
+
+                <a class="website"
+                   href="https://www.ice777.me"
+                   target="_blank">
+                    🌐 www.ice777.me
+                </a>
+
+                <a class="whatsapp-small"
+                   href="https://wa.me/447770775390"
+                   target="_blank">
+                    💬 WhatsApp
+                </a>
+
+            </div>
+
+            <a class="cta"
+               href="https://wa.me/447770775390?text=Hello%20I%20want%20new%20manual%20ID"
+               target="_blank">
+                📲 WhatsApp Now
+            </a>
+
+            <div class="trust">
+                ✅ Trusted Manual Support<br>
+                ✅ Simple Process<br>
+                ✅ Fast Response
+            </div>
+
+            <div class="footer">
+                18+ Only | Play Responsibly | Follow Your Local Laws | T&amp;C Apply
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
+```
